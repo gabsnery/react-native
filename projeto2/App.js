@@ -6,94 +6,36 @@
  * @flow
  */
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
+import { StyleSheet, Text, View, Button, ScrollView } from 'react-native';
 
+const geraNumeroAleatorio = () => {
+  let NumeroAleatorio = Math.random();
+  //let lista = [10, 20, 30, 40];
 
-import 
-{
-  Platform,  
-  StyleSheet,  // estilos - trabalhar com sintaxe semelhante ao css
-  Text,  //representa qualquer tipo de texto - padrao 14px
-  View, //tipo a div
-  Button,
-  ScrollView
-} 
-from 'react-native';
-
-const geraNumeroAleatorio = () =>{
-  var numero_aleatorio = Math.random();
- var lista = [10,20,30,40]
-  numero_aleatorio = Math.floor(numero_aleatorio * 10);
+  NumeroAleatorio = Math.floor(NumeroAleatorio * 10);
 
   //[a, b, c, d] = [10,20,30,40];
-  ({nome, idade, sexo} ={nome: 'José', idade : 33, sexo:'M'});
+  //({ nome, idade, sexo } = { nome: 'José', idade: 33, sexo: 'M' });
 
-  alert(nome);
-}
+  // eslint-disable-next-line no-undef
+  alert(NumeroAleatorio);
+};
 
-const estilo
+const style = {
+  estiloTexto: {
+    fontSize: 40,
+    backgroundColor: '#5A9',
+    height: 80,
+  }
+};
+
 export default class App extends Component {
   render() {
     return (
-      
-      <ScrollView style={styles.container}>
-        <View style={styles.postContainer}>
-          <Button
-          title = "Gerar um número randomico"
-          onPress = {geraNumeroAleatorio}
-          />
-          <Text style={styles.postTitle}>Estudando React Native</Text>
-          <Text style={styles.postDescription}>Lorem ipsum sit lorem ...</Text>
-        </View>
-        <View style={styles.postContainer}>
-          <Text style={styles.postTitle}>Estudando React Native</Text>
-          <Text style={styles.postDescription}>Lorem ipsum sit lorem ...</Text>
-        </View>
-        <View style={styles.postContainer}>
-          <Text style={styles.postTitle}>Estudando React Native</Text>
-          <Text style={styles.postDescription}>Lorem ipsum sit lorem ...</Text>
-        </View>
-        <View style={styles.postContainer}>
-          <Text style={styles.postTitle}>Estudando React Native</Text>
-          <Text style={styles.postDescription}>Lorem ipsum sit lorem ...</Text>
-        </View>
-        <View style={styles.postContainer}>
-          <Text style={styles.postTitle}>Estudando React Native</Text>
-          <Text style={styles.postDescription}>Lorem ipsum sit lorem ...</Text>
-        </View>
-        <View style={styles.postContainer}>
-          <Text style={styles.postTitle}>Estudando React Native</Text>
-          <Text style={styles.postDescription}>Lorem ipsum sit lorem ...</Text>
-        </View>
-        <View style={styles.postContainer}>
-          <Text style={styles.postTitle}>Estudando React Native</Text>
-          <Text style={styles.postDescription}>Lorem ipsum sit lorem ...</Text>
-        </View>
-      </ScrollView>
+      <Text style={style.estiloTexto}>Frases do Dia</Text>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#333',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  postContainer:{
-    margin :20,
-    padding: 20,
-    backgroundColor: "#FFF",
-    borderRadius:3
-  },
-  postTitle:{
-    fontSize: 18,
-    fontWeight: "bold",
-    marginBottom:1
-  }
-});
